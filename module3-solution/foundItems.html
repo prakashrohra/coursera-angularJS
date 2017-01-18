@@ -1,0 +1,11 @@
+<h3 ng-show="ctrl.items.length > 0"> Matching Items: {{ctrl.items.length}}</h3>
+<!-- h3 ng-show="ctrl.items.length === 0"> Nothing Found </h3 -->
+<!-- h3 ng-show="notFoundMessage.length > 0"> Nothing Found! </h3 -->
+<h3> {{ctrl.notFoundMessage}} </h3>
+<!--h3>{{ctrl.notFoundMsg();}}</h3-->
+<ol>
+  <li ng-repeat="item in ctrl.items">
+    {{ item.name}}, {{ item.short_name}}, {{ item.description}}
+    <button ng-click="ctrl.onRemove({index: $index});">Don't want this one!</button>
+  </li>
+</ol>
