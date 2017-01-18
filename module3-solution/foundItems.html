@@ -1,8 +1,8 @@
-<h3 ng-show="ctrl.items.length > 0"> Matching Items: {{ctrl.items.length}}</h3>
-<h3> {{ctrl.notFoundMessage}} </h3>
+<h3 ng-show="foundItemsListCtrl.items.length > 0"> <u> Matching Items:</u> {{foundItemsListCtrl.items.length}}  </h3>
+<h3> {{foundItemsListCtrl.notFoundMessage}} </h3>
 <ol>
-  <li ng-repeat="item in ctrl.items">
+  <li ng-repeat="item in foundItemsListCtrl.items">
     {{ item.name}}, {{ item.short_name}}, {{ item.description}}
-    <button ng-click="ctrl.onRemove({index: $index});">Don't want this one!</button>
+    <button ng-click="foundItemsListCtrl.onRemove({index: $index});">Don't want this one!</button>
   </li>
 </ol>

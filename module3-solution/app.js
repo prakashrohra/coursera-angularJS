@@ -5,6 +5,8 @@ angular.module('NarrowItDownApp', [])
 .controller('NarrowItDownController', NarrowItDownController)
 .constant('ApiBasePath', "https://davids-restaurant.herokuapp.com")
 .service('MenuSearchService', MenuSearchService)
+.controller('FoundItemsDirectiveController', FoundItemsDirectiveController)
+//.filter('highlight', HighlightFilter)
 .directive('foundItems', FoundItemsDirective);
 
 
@@ -12,18 +14,22 @@ function FoundItemsDirective() {
   var ddo = {
     templateUrl: 'foundItems.html',
     scope: {
+      searchTerm:'@searchTerm',
       items: '<',
       notFoundMessage: '@notFoundMessage',
       onRemove: '&'
     },
-    controller: NarrowItDownController,
-    controllerAs: 'ctrl',
+    controller: 'FoundItemsDirectiveController as foundItemsListCtrl',
     bindToController: true
   };
 
   return ddo;
 }
 
+//FoundItemsDirectiveController.$inject = ['highlightFilter'];
+function FoundItemsDirectiveController(){
+  var foundItemsListCtrl = this;
+}
 
 NarrowItDownController.$inject =  ['MenuSearchService'];
 function NarrowItDownController(MenuSearchService){
@@ -78,7 +84,6 @@ function NarrowItDownController(MenuSearchService){
       console.log("calling Http service for Searching ", searchTerm);
       //call $http service and narrow down the results
       return $http({method:"GET",
-             //url: ("https://davids-restaurant.herokuapp.com/menu_items.json")
              url: (ApiBasePath + "/menu_items.json")
             }).then(function (result) {
             // process result and only keep items that match
@@ -100,7 +105,14 @@ function NarrowItDownController(MenuSearchService){
 
     return service.foundItems;
   };
-
 }
+
+// function HighlightFilter() {
+//   return function (input, target) {
+//     input = input || "";
+//     input = input.replace(target, "<b><u>" + target + "</u></b>");
+//     return input;
+//   }
+// }
 
 })();
