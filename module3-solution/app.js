@@ -3,7 +3,7 @@
 
 angular.module('NarrowItDownApp', [])
 .controller('NarrowItDownController', NarrowItDownController)
-.constant('ApiBasePath', "http://davids-restaurant.herokuapp.com")
+.constant('ApiBasePath', "https://davids-restaurant.herokuapp.com")
 .service('MenuSearchService', MenuSearchService)
 .directive('foundItems', FoundItemsDirective);
 
@@ -90,7 +90,7 @@ function NarrowItDownController(MenuSearchService){
       console.log("calling Http service for Searching ", searchTerm);
       //call $http service and narrow down the results
       return $http({method:"GET",
-             url: ("http://davids-restaurant.herokuapp.com/menu_items.json")
+             url: ("https://davids-restaurant.herokuapp.com/menu_items.json")
             }).then(function (result) {
             // process result and only keep items that match
             //var foundItems = [];
