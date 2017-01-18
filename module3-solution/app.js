@@ -14,7 +14,6 @@ function FoundItemsDirective() {
     scope: {
       items: '<',
       notFoundMessage: '@notFoundMessage',
-      //notFoundMsg:'&',
       onRemove: '&'
     },
     controller: NarrowItDownController,
@@ -33,10 +32,6 @@ function NarrowItDownController(MenuSearchService){
   narrowItDownCtrl.searchTerm = "";
 
   narrowItDownCtrl.found = [];
-
-  // narrowItDownCtrl.notFoundMsg = function(){
-  //   return narrowItDownCtrl.notFoundMessage;
-  // }
 
   narrowItDownCtrl.narrowItDown = function(){
     narrowItDownCtrl.notFoundMessage = "";
@@ -76,21 +71,15 @@ function NarrowItDownController(MenuSearchService){
  MenuSearchService.$inject = ['$http', 'ApiBasePath'];
  function MenuSearchService($http, ApiBasePath){
   var service = this;
-  //service.foundItems = [];
 
   service.getMatchedMenuItems = function (searchTerm){
     service.foundItems = [];
     console.log("Searching for ", searchTerm);
-    // if(searchTerm === undefined || searchTerm.length === 0){
-    //   console.log("Search Item is empty. Returning empty foundItems list");
-    //   service.foundItems = [];
-    //   return service.foundItems;
-    // }
-    // else{
       console.log("calling Http service for Searching ", searchTerm);
       //call $http service and narrow down the results
       return $http({method:"GET",
-             url: ("https://davids-restaurant.herokuapp.com/menu_items.json")
+             //url: ("https://davids-restaurant.herokuapp.com/menu_items.json")
+             url: (ApiBasePath + "/menu_items.json")
             }).then(function (result) {
             // process result and only keep items that match
             //var foundItems = [];
@@ -109,7 +98,6 @@ function NarrowItDownController(MenuSearchService){
             return service.foundItems;
         });
 
-    //}
     return service.foundItems;
   };
 

@@ -17,18 +17,14 @@
       <button ng-click = 'ctrl.narrowItDown();' class="btn btn-primary">Narrow It Down For Me!</button>
     </div>
 
-    <!-- found-items should be implemented as a component -->
     <br/> <br/>
-    <!-- found-items
-      items="ctrl.found"
-      not-found-msg="ctrl.notFoundMsg()"
-      not-found-message="{{ctrl.notFoundMessage}}"
-      on-remove="ctrl.removeItem(index)"></found-items -->
 
-      <found-items
+    <!-- found-items should be implemented as a component -->
+    <found-items
         items="ctrl.found"
         not-found-message="{{ctrl.notFoundMessage}}"
-        on-remove="ctrl.removeItem(index)"></found-items>
+        on-remove="ctrl.removeItem(index)">
+    </found-items>
 
   </div>
 <script src="angular.min.js"></script>
