@@ -1,0 +1,26 @@
+
+<!-- ul>
+  <li ng-repeat="item in $ctrl.items">
+    {{ item.short_name }} - {{ item.name }} - {{ item.description }}
+    <br/>
+     Price: ${{item.price_large}}(large), ${{item.price_small}}(small)
+  </li>
+</ul -->
+
+<table ng-show="$ctrl.items.length > 0" border="1">
+  <tr>
+    <th>Short Name</th>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Price (Large)</th>
+    <th>Price (Small)</th>
+  </tr>
+
+  <tr ng-repeat="item in $ctrl.items">
+    <td>{{ item.short_name}}</td>
+    <td>{{ item.name}}</td>
+    <td>{{ item.description}}</td>
+    <td>${{item.price_large}}</td>
+    <td>${{item.price_small}}</td>
+  </tr>
+</table>
