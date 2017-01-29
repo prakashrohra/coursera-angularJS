@@ -1,0 +1,12 @@
+<div id="myinfo">
+  First Name: {{ $ctrl.myinfo.firstname}} <br/>
+  Last Name: {{ $ctrl.myinfo.lastname}} <br/>
+  Email: {{ $ctrl.myinfo.email}} <br/>
+  Phone: {{ $ctrl.myinfo.phone }} <br/>
+  Fav Menu Item: {{ $ctrl.myinfo.favmenuitem }} <br/>
+  {{ $ctrl.myinfo.favMenuItemData.name }}   <br/>
+  {{ $ctrl.myinfo.favMenuItemData.description }}<br/>
+  <img class="img-responsive" width="250" height="150"
+  ng-src="{{$ctrl.basePath}}/images/{{$ctrl.myinfo.favmenuitem}}.jpg"
+  alt="{{$ctrl.myinfo.favMenuItemData.name}}">
+</div>
