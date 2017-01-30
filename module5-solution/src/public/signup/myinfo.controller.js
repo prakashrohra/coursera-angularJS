@@ -8,7 +8,7 @@ angular.module('public')
 MyInfoController.$inject = ['myinfo'];
 function MyInfoController(myinfo) {
   var myInfoCtrl = this;
-  console.log("Ctrl injected User Info", myinfo);
+  //console.log("Ctrl injected User Info", myinfo);
   myInfoCtrl.myinfo = myinfo;
 }
 

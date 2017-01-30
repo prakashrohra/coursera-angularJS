@@ -1,12 +1,10 @@
 <a ui-sref="public.home">Home</a> &lt; <span>My Info</span>
 
-
 <div id="myinfo">
-  <h2 ng-show="!myInfoCtrl.myinfo.firstname"> Not Signed Up Yet.
-    <a ui-sref="public.signup">Sign Up</a>
-  </h2>
+  <h3 ng-show="!myInfoCtrl.myinfo.firstname"> Not Signed Up Yet.
+    <a ui-sref="public.signup"> Sign Up Now!</a>
+  </h3>
 
-  <h3 ng-if="myInfoCtrl.myinfo.firstname">My Info</h3>
+  <h3 ng-if="myInfoCtrl.myinfo.firstname">My Info:</h3>
   <myinfo ng-if="myInfoCtrl.myinfo.firstname" myinfo="myInfoCtrl.myinfo"></myinfo>
 </div>
-<!-- ui-view></ui-view -->

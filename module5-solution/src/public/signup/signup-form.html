@@ -1,12 +1,10 @@
-  <!-- div ng-controller="SignupFormController as signupCtrl" -->
-<div id ="signup">
-    <!-- h1>Sign Up</h1 -->
 
+<div id ="signup">
     <fieldset>
       <legend>Sign Up</legend>
       <form name='signupForm' novalidate>
 
-        <input type="text" name="firstname" placeholder="Pick a firstname"
+        <input type="text" name="firstname" placeholder="Enter Your First Name"
           ng-model="signupCtrl.user.firstname"
           required
           minlength="3"
@@ -22,7 +20,7 @@
           </span>
           <br>
 
-        <input type="text" name="lastname" placeholder="Pick a lastname"
+        <input type="text" name="lastname" placeholder="Enter Your Last Name"
           ng-model="signupCtrl.user.lastname"
           required
           minlength="3"
@@ -55,7 +53,7 @@
           </span>
           <br>
 
-          <input type="text" name="favmenuitem" placeholder="Enter a Favorite menu item"
+          <input type="text" name="favmenuitem" placeholder="Enter Your Favorite menu item"
             ng-model="signupCtrl.user.favmenuitem"
             required
             minlength="2"
@@ -78,22 +76,9 @@
           ng-disabled="signupForm.$invalid"
           ng-click="signupCtrl.submit()">Submit</button>
 
-          <!-- div style="margin-top: 10px;">
-            Form valid? {{ signupForm.$valid }}
-          </div -->
           <h2 ng-if="signupCtrl.successMsg">
             {{signupCtrl.successMsg}}
           </h2>
       </form>
     </fieldset>
-
-
-    <!-- div id="info" ng-if="signupCtrl.completed">
-      First Name: {{ signupCtrl.user.firstname}} <br/>
-	  Last Name: {{ signupCtrl.user.lastname}} <br/>
-      Email: {{ signupCtrl.user.email}} <br/>
-      Phone: {{ signupCtrl.user.phone }} <br/>
-      Fav Menu Item: {{ signupCtrl.user.favmenuitem }} </br>
-    </div -->
   </div>
-<!-- /div -->
