@@ -1,11 +1,11 @@
 <div id="myinfo">
-  First Name: {{ $ctrl.myinfo.firstname}} <br/>
-  Last Name: {{ $ctrl.myinfo.lastname}} <br/>
-  Email: {{ $ctrl.myinfo.email}} <br/>
-  Phone: {{ $ctrl.myinfo.phone }} <br/>
-  Fav Menu Item: {{ $ctrl.myinfo.favmenuitem }} <br/>
-  {{ $ctrl.myinfo.favMenuItemData.name }}   <br/>
-  {{ $ctrl.myinfo.favMenuItemData.description }}<br/>
+  First Name: <b>{{ $ctrl.myinfo.firstname}}</b> <br/>
+  Last Name: <b>{{ $ctrl.myinfo.lastname}} </b><br/>
+  Email: <b>{{ $ctrl.myinfo.email}} </b><br/>
+  Phone: <b>{{ $ctrl.myinfo.phone }} </b><br/>
+  Fav Menu Item: <b>{{ $ctrl.myinfo.favmenuitem }}</b> <br/>
+  <b>{{ $ctrl.myinfo.favMenuItemData.name }}</b>   <br/>
+  <b>{{ $ctrl.myinfo.favMenuItemData.description }}</b><br/>
   <img class="img-responsive" width="250" height="150"
   ng-src="{{$ctrl.basePath}}/images/{{$ctrl.myinfo.favmenuitem}}.jpg"
   alt="{{$ctrl.myinfo.favMenuItemData.name}}">
